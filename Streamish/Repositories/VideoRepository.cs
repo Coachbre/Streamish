@@ -81,6 +81,9 @@ namespace Streamish.Repositories
                        LEFT JOIN Comment c on c.VideoId = v.id
              ORDER BY  v.DateCreated
             ";
+                    //open the connection and get all video, user profile, and comment data (some properties are renamed) from
+                    //Video table (joining user profile data where userprofile.id and where the commentvideo.id matches that video id)
+                    //sort by video creation date
 
                     var reader = cmd.ExecuteReader();
 
