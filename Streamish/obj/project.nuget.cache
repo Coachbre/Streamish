@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pLKDT2vGKIO/fuf4DBE+R1//ELcmJPTvq3BXXnVGI3+lSpozi7AmybP4gKb36QsUc+6QzidD4rDFd0eeoHcdmQ==",
+  "dgSpecHash": "5ntaxL2Ig2PkbiPogA2NmA1EJjJ5gIWy5w+SguCqo23enT5q9p7yCfv1tGBtD2ZNUcYBDn0WgPTm7tK2qD/+tQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\breko\\source\\repos\\Streamish\\Streamish\\Streamish.csproj",
+  "projectFilePath": "C:\\Users\\breko\\workspace\\csharp\\Streamish\\Streamish\\Streamish.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\breko\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\breko\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",
