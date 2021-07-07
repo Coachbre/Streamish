@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\breko\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\breko\\.nuget\\packages"
-    ]
-  }
-}
