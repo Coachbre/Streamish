@@ -88,11 +88,13 @@ namespace Streamish.Repositories
                     var reader = cmd.ExecuteReader();
 
                     var videos = new List<Video>();
+                        // ^ creating an empty list to store future video objects
                     while (reader.Read())
                     {
                         var videoId = DbUtils.GetInt(reader, "VideoId");
 
                         var existingVideo = videos.FirstOrDefault(p => p.Id == videoId);
+                        //p is a taco
                         if (existingVideo == null)
                         {
                             existingVideo = new Video()
@@ -116,6 +118,7 @@ namespace Streamish.Repositories
 
                             videos.Add(existingVideo);
                         }
+                        //if video object with properties being looped over doesnt already exist, create one using the data and add it to the video object list
 
                         if (DbUtils.IsNotDbNull(reader, "CommentId"))
                         {
@@ -127,6 +130,7 @@ namespace Streamish.Repositories
                                 UserProfileId = DbUtils.GetInt(reader, "CommentUserProfileId")
                             });
                         }
+                        //loop through existing video list and add corresponding comments to each video (one to many relationship)/ (the while loop will only add each video once)
                     }
 
                     reader.Close();
