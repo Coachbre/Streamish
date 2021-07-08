@@ -130,7 +130,7 @@ namespace Streamish.Repositories
                                 UserProfileId = DbUtils.GetInt(reader, "CommentUserProfileId")
                             });
                         }
-                        //loop through existing video list and add corresponding comments to each video (one to many relationship)/ (the while loop will only add each video once)
+                        //loop through existing video list and add corresponding comments to each video (one to many relationship)/ (loop will only add each video once)
                     }
 
                     reader.Close();
