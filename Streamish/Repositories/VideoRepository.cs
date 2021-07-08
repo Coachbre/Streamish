@@ -151,10 +151,12 @@ namespace Streamish.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                          SELECT Title, Description, Url, DateCreated, UserProfileId
+                          SELECT Video.Id, Video.Title, Video.Description, Video.Url, Video.DateCreated, Video.UserProfileId,
+                            UserProfile.Name, UserProfile.Email, UserProfile.ImageUrl, UserProfile.DateCreated 
                             FROM Video
-                           WHERE Id = @Id";
-
+                            JOIN UserProfile on UserProfileId = Video.UserProfileId
+                            WHERE Video.Id = @Id";
+                    //using an alias (AS) renames the column to avoid duplicate coumn names between tables
                     DbUtils.AddParameter(cmd, "@Id", id);
 
                     var reader = cmd.ExecuteReader();
@@ -170,6 +172,14 @@ namespace Streamish.Repositories
                             DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
                             Url = DbUtils.GetString(reader, "Url"),
                             UserProfileId = DbUtils.GetInt(reader, "UserProfileId"),
+                            UserProfile = new UserProfile()
+                            {
+                                Id = DbUtils.GetInt(reader, "UserProfileId"),
+                                Name = DbUtils.GetString(reader, "Name"),
+                                Email = DbUtils.GetString(reader, "Email"),
+                                DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
+                                ImageUrl = DbUtils.GetString(reader, "ImageUrl"),
+                            }
                         };
                     }
 
