@@ -33,7 +33,7 @@ namespace Streamish.Repositories
                     {
                         userProfiles.Add(new UserProfile()
                         {
-                            Id = DbUtils.GetInt(reader, "UserProfileId"),
+                            Id = DbUtils.GetInt(reader, "Id"),
                             Name = DbUtils.GetString(reader, "Name"),
                             Email = DbUtils.GetString(reader, "Email"),
                             DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
