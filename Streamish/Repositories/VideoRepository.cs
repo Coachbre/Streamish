@@ -257,7 +257,7 @@ namespace Streamish.Repositories
                             Id = DbUtils.GetInt(reader, "CommentId"),
                             Message = DbUtils.GetString(reader, "Message"),
                             VideoId = id,
-                            UserProfileId = DbUtils.GetInt(reader, "CommentUserProfileId")
+                            UserProfileId = DbUtils.GetInt(reader, "CommenterId")
                         });
                     }
 
