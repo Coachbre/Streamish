@@ -2,11 +2,15 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 import ApplicationViews from "./components/ApplicationViews";
+import Header from "./components/Header";
 
+// any views within this function will
+// always be visible (most are within application views)
 function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
         <ApplicationViews />
       </Router>
     </div>

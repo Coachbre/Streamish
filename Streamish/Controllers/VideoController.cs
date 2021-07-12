@@ -50,6 +50,8 @@ namespace Streamish.Controllers
         [HttpPost]
         public IActionResult Post(Video video)
         {
+            video.DateCreated = DateTime.Now;
+            video.UserProfileId = 1;
             _videoRepository.Add(video);
             return CreatedAtAction("Get", new { id = video.Id }, video);
         }
