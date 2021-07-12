@@ -152,6 +152,7 @@ namespace Streamish.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
+
                           SELECT Video.Id, Video.Title, Video.Description, Video.Url, Video.DateCreated, Video.UserProfileId,
                             UserProfile.Name, UserProfile.Email, UserProfile.ImageUrl, UserProfile.DateCreated 
                             FROM Video
